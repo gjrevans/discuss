@@ -5,6 +5,8 @@ defmodule Discuss.Web.TopicController do
   alias Discuss.Repo
 
   def index(conn, _params) do
+    IO.inspect(conn.assigns)
+    
     topics = Repo.all(Topic)
     conn
     |> assign(:topics, topics)
